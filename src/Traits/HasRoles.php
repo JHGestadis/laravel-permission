@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
 use Spatie\Permission\Contracts\Role;
 use Spatie\Permission\PermissionRegistrar;
-
+// testing 123
 trait HasRoles
 {
     use HasPermissions;
@@ -16,6 +16,7 @@ trait HasRoles
 
     public static function bootHasRoles()
     {
+        die('tst');
         static::deleting(function ($model) {
             if (method_exists($model, 'isForceDeleting') && ! $model->isForceDeleting()) {
                 return;
